@@ -4,10 +4,10 @@
             <a *ngFor="let link of headerLinks" [routerLink]="link.path" [class.active]="isActive(link.path)"  >{{link.name}}</a>
     </nav>
     <div class="flex justify-between items-center gap-4">
-        <span class="flex h-8 w-8 justify-center items-center cursor-pointer relative">
+        <a routerLink="/checkout" class="flex h-8 w-8 justify-center items-center cursor-pointer relative">
             <img src="/cart.png" alt="cart-icon" loading="lazy" class="h-full w-full">
             <span class="absolute top-[0px] right-[-2px] bg-red-600 text-white text-xs font-semibold rounded-full h-5 w-5 flex justify-center items-center">0</span>
-        </span>
-        <button class="px-7 py-3 rounded-2xl border-[#FF9900] border cursor-pointer text-base font-semibold" >Order Now</button>
+        </a>
+        <a routerLink="/menu" class="px-7 py-3 rounded-2xl border-[#FF9900] border cursor-pointer text-base font-semibold" >Order Now</a>
     </div>
 </header>

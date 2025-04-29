@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -20,6 +21,11 @@ export class HeaderComponent {
     { name: 'Contact', path: '/contact' },
   ];
 
+  isScrolled: boolean = false; // Initialize isScrolled to false
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 10;
+  }
   isActive(route: string): boolean {
     return this.router.url === route; // Returns true if the current route matches
   }

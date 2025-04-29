@@ -1,1 +1,10 @@
-<p>mealcard works!</p>
+<div class="h-[fit] w-[full] border border-[#FF9900] rounded-[26px] px-4 py-4 flex flex-col justify-between gap-4">
+    <span class="flex justify-center items-center object-center object-cover">
+        <img src="{{meal.imageUrl}}" alt={{meal.name}}>
+    </span>
+    <div class="flex justify-between items-center">
+        <span class="text-lg font-semibold">{{meal.title}}</span>
+        <span class="text-lg font-extrabold">₦{{meal.price}}</span>
+    </div>
+    <span class="flex w-full bg-[#FF9900] justify-center items-center h-12 rounded-[8px] text-base font-bold cursor-pointer">Order Now</span>
+</div>

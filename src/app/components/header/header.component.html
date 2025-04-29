@@ -1,4 +1,4 @@
-<header class="flex justify-between items-center lg:px-16 fixed w-full left-0 top-0 h-20 lg:h-24 z-[1000]">
+<header class="flex transition-class justify-between items-center lg:px-16 fixed w-full left-0 top-0 h-20 lg:h-24 z-[1000] " [class.scrolled]="isScrolled">
     <h2 class="cursor-pointer text-white font-normal text-4xl">Fraiche</h2>
     <nav class="flex justify-center items-center gap-8 lg:gap-14 text-white text-base font-semibold relative" >
             <a *ngFor="let link of headerLinks" [routerLink]="link.path" [class.active]="isActive(link.path)"  >{{link.name}}</a>

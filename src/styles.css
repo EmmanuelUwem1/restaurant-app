@@ -4,6 +4,9 @@
   src: url('/fonts/poppins-regular-webfont.woff2') format('woff2');
   font-display: swap;
 }
+*{
+    outline: none;
+}
 
 body{
 background-color: #0F0F0F;
@@ -13,6 +16,7 @@ font-family: 'Poppins', sans-serif;
 a{
     cursor: pointer;
 }
+
 nav a{
     color: white;
     text-decoration: none;
@@ -22,9 +26,15 @@ nav a{
 
     
 }
-nav a:hover, .active{
+nav a:hover{
+color: #FF9900;
+}
+.active{
 color: #FF9900;
     border-bottom: 3px solid #FF9900;
+}
+.transition-class{
+    transition: all .4s ease;
 }
 
 

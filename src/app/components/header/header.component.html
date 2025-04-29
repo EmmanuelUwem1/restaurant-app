@@ -1,13 +1,13 @@
-<header class="flex justify-between items-center px-16 fixed w-full left-0 top-0 h-20 lg:h-24 z-[1000]">
+<header class="flex justify-between items-center lg:px-16 fixed w-full left-0 top-0 h-20 lg:h-24 z-[1000]">
     <h2 class="cursor-pointer text-white font-normal text-4xl">Fraiche</h2>
-    <nav class="flex gap-8 text-white text-base font-semibold" *ngFor="let link of headerLinks">
-        
-            <a [routerLink]="link.path" [class.active]="isActive(link.path)"  >{{link.name}}</a>
-          
-       
+    <nav class="flex justify-center items-center gap-8 lg:gap-14 text-white text-base font-semibold relative" >
+            <a *ngFor="let link of headerLinks" [routerLink]="link.path" [class.active]="isActive(link.path)"  >{{link.name}}</a>
     </nav>
-    <div class="flex justify-between items-center gap-2">
-        <span class="flex h-8 w-8 justify-center items-center cursor-pointer"><img src="/cart.png" alt="cart-icon" loading="lazy" class="h-full w-full"></span>
+    <div class="flex justify-between items-center gap-4">
+        <span class="flex h-8 w-8 justify-center items-center cursor-pointer relative">
+            <img src="/cart.png" alt="cart-icon" loading="lazy" class="h-full w-full">
+            <span class="absolute top-[0px] right-[-2px] bg-red-600 text-white text-xs font-semibold rounded-full h-5 w-5 flex justify-center items-center">0</span>
+        </span>
         <button class="px-7 py-3 rounded-2xl border-[#FF9900] border cursor-pointer text-base font-semibold" >Order Now</button>
     </div>
 </header>

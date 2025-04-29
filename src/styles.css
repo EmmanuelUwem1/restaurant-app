@@ -10,6 +10,23 @@ background-color: #0F0F0F;
 color: white;
 font-family: 'Poppins', sans-serif;
 }
+a{
+    cursor: pointer;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    transition: all .4s ease;
+    position: relative;
+        border-bottom: 3px solid transparent;
+
+    
+}
+nav a:hover, .active{
+color: #FF9900;
+    border-bottom: 3px solid #FF9900;
+}
+
 
 
 

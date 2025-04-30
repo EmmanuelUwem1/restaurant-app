@@ -21,6 +21,15 @@ header.scrolled{
 a{
     cursor: pointer;
 }
+.bg-blurred{
+    @media (max-width: 768px) {
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    background-color: #0f0f0f6e;
+        
+    }
+   
+}
 
 nav a{
     color: white;

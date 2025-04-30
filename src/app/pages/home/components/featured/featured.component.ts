@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MealcardComponent } from "../../../../components/mealcard/mealcard.component";
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-featured',
-  imports: [MealcardComponent, CommonModule],
+  imports: [MealcardComponent, CommonModule, RouterModule],
   templateUrl: './featured.component.html',
   styleUrl: './featured.component.css'
 })

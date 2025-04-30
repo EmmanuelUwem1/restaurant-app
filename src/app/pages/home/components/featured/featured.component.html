@@ -3,7 +3,7 @@
     <h2 class="font-semibold text-2xl">Featured Meals</h2>
     <a routerLink="/menu" class="text-[#FF9900] text-lg font-semibold">see more</a>
 </div>
-    <div class="grid lg:grid-cols-4 gap-4 py-6">
+    <div class="grid max-md:grid-cols-3 max-sm:grid-cols-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-6">
         <app-mealcard *ngFor="let meal of featuredMeals.slice(0,4)" [meal]="meal"/>
     </div>
 </section>

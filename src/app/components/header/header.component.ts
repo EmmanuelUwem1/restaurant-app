@@ -15,8 +15,8 @@ export class HeaderComponent {
   constructor(private router: Router) {}
   headerLinks = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
     { name: 'Menu', path: '/menu' },
+    { name: 'About', path: '/about' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
   ];

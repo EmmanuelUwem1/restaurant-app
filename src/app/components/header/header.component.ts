@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
+import { HamburgerIconComponent } from '../../hamburger-icon/hamburger-icon.component';
+import { signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HamburgerIconComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -21,12 +23,18 @@ export class HeaderComponent {
     { name: 'Contact', path: '/contact' },
   ];
 
-  isScrolled: boolean = false; // Initialize isScrolled to false
+  isScrolled: boolean = false;
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 10;
   }
   isActive(route: string): boolean {
-    return this.router.url === route; // Returns true if the current route matches
+    return this.router.url === route;
   }
+  isOpen = signal<boolean>(false);
+ 
+  toggleMenu: () => void = () => {
+    this.isOpen.set(!this.isOpen());
+    console.log('Hamburger icon clicked!', this.isOpen());
+  };
 }

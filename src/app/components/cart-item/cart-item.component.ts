@@ -9,15 +9,6 @@ import { Input } from '@angular/core';
 })
 export class CartItemComponent {
   @Input() item: any;
-  @Input() removeItem: (item: any) => void = () => {
-    console.log('removeItem function not provided');
-  };
-  @Input() updateQuantity: (item: any, quantity: number) => void = () => {
-    console.log('updateQuantity function not provided');
-  }
-  @Input() increaseQuantity: (item: any) => void = () => {
-    console.log('increaseQuantity function not provided');
-  };
 
 
 }

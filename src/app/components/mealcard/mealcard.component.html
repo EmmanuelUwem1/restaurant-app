@@ -7,12 +7,12 @@
         <span>₦{{meal.price }}</span>
     </div>
     <span *ngIf="!isInCart" (click)="addToCart()" class="flex w-full bg-[#FF9900] justify-center items-center h-12 rounded-[8px] text-base font-bold cursor-pointer" >Order Now</span>
-    <div *ngIf="isInCart" class="flex justify-between items-center gap-2 w-full h-12  rounded-[8px] px-4">
-        <span class="cursor-pointer" (click)="decreamentQuantity()">-</span>
-       <span *ngIf="quantity > 0">
+    <div *ngIf="isInCart" class="flex justify-between items-center gap-2 w-full h-12">
+        <span class="cursor-pointer rounded-[8px] bg-[#FF9900] w-10 h-10 justify-center flex items-center font-extrabold text-base" (click)="decreamentQuantity()">-</span>
+       <span class="text-base font-bold" *ngIf="quantity > 0">
         {{ quantity }}
         </span>
 
-        <span class="cursor-pointer" (click)="increamentQuantity()">+</span>
+        <span class="cursor-pointer rounded-[8px] bg-[#FF9900] w-10 h-10 justify-center flex items-center font-extrabold text-base" (click)="increamentQuantity()">+</span>
     </div>
 </div>

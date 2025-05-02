@@ -2,8 +2,20 @@
    <div class="flex justify-between items-center"><h1 class="font-semibold text-2xl sm:text-3xl">Cart Summary</h1>
     <a routerLink="/" class="font-semibold text-[#FF9900] text-base">Back to menu</a>
 </div>
-<div class="min-h-screen flex flex-col justify-center items-center">
+<div *ngIf="!cartItems || cartItems.length !> 0" class="min-h-screen flex flex-col justify-center items-center">
     <h1 class="font-semibold text-center">Your Cart is empty. Please add items to your cart before proceeding to checkout.</h1>
+    
+</div>
+<div *ngIf="cartItems" class="min-h-screen flex flex-col justify-start items-center">
+    <div class="flex flex-col justify-start items-center gap-4 py-6 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+            <app-cart-item *ngFor="let item of cartItems" [item]="item" (removeItem)="removeItem($event)"/>
+        </div>
+    </div>
+    <div class="flex justify-between items-center w-full px-4 sm:px-8 lg:px-16 py-4 bg-[#0F0F0F] border-t border-[#FF9900]">
+        <h1 class="font-semibold text-lg">Total: ${{totalPrice}}</h1>
+        <a routerLink="/checkout/checkout-details" class="px-4 py-3 rounded-2xl bg-[#FF9900] text-white font-semibold">Proceed to Checkout</a>
+    </div>
 </div>
 <app-footer />
 </section>

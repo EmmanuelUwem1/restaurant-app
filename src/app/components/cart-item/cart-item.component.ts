@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
 @Component({
   selector: 'app-cart-item',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.css'
 })

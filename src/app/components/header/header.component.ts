@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
 import { HamburgerIconComponent } from '../../hamburger-icon/hamburger-icon.component';
 import { signal } from '@angular/core';
+import { CartService } from '../../services/cart-service.service';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,11 @@ import { signal } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, cartService: CartService) { 
+    
+    this.addedItems = cartService.getUniqueItemCount();
+  }
+  addedItems: number;
   headerLinks = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },

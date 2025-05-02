@@ -10,7 +10,10 @@ export class CartService {
 
   // Get cart items from local storage
   getCart(): any[] {
-    return JSON.parse(localStorage.getItem(this.cartKey) || '[]');
+    if (typeof window !== "undefined" && localStorage) {
+      return JSON.parse(localStorage.getItem(this.cartKey) || '[]');
+    }
+    return []; // Return empty array if localStorage is not available
   }
 
   // Add item to the cart
@@ -57,7 +60,7 @@ export class CartService {
 
   getUniqueItemCount(): number {
     const cart = this.getCart(); // Retrieve cart items from local storage
-    return cart.length; // Number of unique items
+    return (cart.length || 0); // Number of unique items
   }
 
   // Update cart in local storage

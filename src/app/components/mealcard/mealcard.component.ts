@@ -10,7 +10,7 @@ import { CartService } from '../../services/cart-service.service';
   styleUrl: './mealcard.component.css',
 })
 export class MealcardComponent {
-  @Input() meal!: Meal; // ✅ Input property
+  @Input() meal!: Meal; 
 
   constructor(private cartService: CartService) {}
 
@@ -19,7 +19,7 @@ export class MealcardComponent {
       console.error('Meal is undefined!');
       return;
     }
-    this.cartService.addToCart(this.meal, 1); // ✅ Call method properly
+    this.cartService.addToCart(this.meal, 1);
     console.log(`Added ${this.meal.title} to cart!`);
   }
 }

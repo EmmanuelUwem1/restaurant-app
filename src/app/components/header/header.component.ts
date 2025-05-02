@@ -15,11 +15,13 @@ import { CartService } from '../../services/cart-service.service';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  constructor(private router: Router, cartService: CartService) { 
-    
-    this.addedItems = cartService.getUniqueItemCount();
+  constructor(private router: Router, private cartService: CartService) {}
+  addedItems: number = 0;
+  ngOnInit() {
+    this.cartService.cart$.subscribe((cart) => {
+      this.addedItems = cart.length; // Updates whenever cart changes
+    });
   }
-  addedItems: number;
   headerLinks = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
@@ -37,7 +39,7 @@ export class HeaderComponent {
     return this.router.url === route;
   }
   isOpen = signal<boolean>(false);
- 
+
   toggleMenu: () => void = () => {
     this.isOpen.set(!this.isOpen());
     console.log('Hamburger icon clicked!', this.isOpen());

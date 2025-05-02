@@ -10,7 +10,7 @@ export class CartService {
 
   // Get cart items from local storage
   getCart(): any[] {
-    if (typeof window !== "undefined" && localStorage) {
+    if (typeof window !== 'undefined' && localStorage) {
       return JSON.parse(localStorage.getItem(this.cartKey) || '[]');
     }
     return []; // Return empty array if localStorage is not available
@@ -31,20 +31,27 @@ export class CartService {
     this.updateCart(cart);
   }
   increamentQuantity(mealId: string) {
-    const existingItem = this.getCart().find((item) => item.id === mealId);
+    let cart = this.getCart(); 
+    const existingItem = cart.find((item) => item.id === mealId);
+
     if (existingItem) {
-      existingItem.quantity += 1; // Increment quantity
-      this.updateCart(this.getCart()); // Update cart in local storage
+      existingItem.quantity += 1;
     }
+
+    this.updateCart(cart); 
   }
+
   decreamentQuantity(mealId: string) {
-    const existingItem = this.getCart().find((item) => item.id === mealId);
+    let cart = this.getCart();
+    const existingItem = cart.find((item) => item.id === mealId);
+
     if (existingItem && existingItem.quantity > 1) {
-      existingItem.quantity -= 1; // Decrement quantity
-      this.updateCart(this.getCart()); // Update cart in local storage
+      existingItem.quantity -= 1;
     } else if (existingItem && existingItem.quantity === 1) {
-      this.removeFromCart(mealId); // Remove item if quantity is 1
+      cart = cart.filter((item) => item.id !== mealId);
     }
+
+    this.updateCart(cart);
   }
 
   // Remove item from cart
@@ -60,12 +67,15 @@ export class CartService {
 
   getUniqueItemCount(): number {
     const cart = this.getCart(); // Retrieve cart items from local storage
-    return (cart.length || 0); // Number of unique items
+    return cart.length || 0; // Number of unique items
   }
 
   // Update cart in local storage
   private updateCart(cart: any[]) {
-    localStorage.setItem(this.cartKey, JSON.stringify(cart));
-    this.cartSubject.next(cart);
+    if (typeof window !== 'undefined' || localStorage) {
+      localStorage.setItem(this.cartKey, JSON.stringify(cart));
+      this.cartSubject.next(cart);
+    }
+    return cart; // Return updated cart
   }
 }

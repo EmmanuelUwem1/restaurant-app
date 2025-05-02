@@ -11,10 +11,10 @@ import { RouterModule } from '@angular/router';
 })
 export class FeaturedComponent {
   featuredMeals = [
-    {title:"Jollof Rice", price:"2000", imageUrl:"/meal-1.png"},
-    {title:"Fries", price:"3000", imageUrl:"meal-2.png"},
-    {title:"Fried Rice", price:"3500", imageUrl:"meal-3.png"},
-    {title:"Grilled Fish", price:"2000", imageUrl:"meal-4.png"},
+    {title:"Jollof Rice", price:"2000", imageUrl:"/meal-1.png", id:"1"},
+    {title:"Fries", price:"3000", imageUrl:"meal-2.png", id:"2"},
+    {title:"Fried Rice", price:"3500", imageUrl:"meal-3.png", id:"3"},
+    {title:"Grilled Fish", price:"2000", imageUrl:"meal-4.png", id:"4"},
     
   ]
 }

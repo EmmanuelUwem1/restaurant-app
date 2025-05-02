@@ -10,9 +10,9 @@ import { CartService } from '../../services/cart-service.service';
   styleUrl: './mealcard.component.css',
 })
 export class MealcardComponent {
-  @Input() meal!: Meal; 
+  @Input() meal!: Meal;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) { }
 
   addToCart() {
     if (!this.meal) {
@@ -20,6 +20,14 @@ export class MealcardComponent {
       return;
     }
     this.cartService.addToCart(this.meal, 1);
+    console.log(`Added ${this.meal.title} to cart!`);
+  }
+  increamentQuantity() {
+    if (!this.meal) {
+      console.error('Meal is undefined!');
+      return;
+    }
+    this.cartService.increamentQuantity(this.meal.id);
     console.log(`Added ${this.meal.title} to cart!`);
   }
 }

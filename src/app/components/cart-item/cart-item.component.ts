@@ -1,14 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
+import { CartService } from '../../services/cart-service.service';
 @Component({
   selector: 'app-cart-item',
   imports: [CommonModule],
   templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css'
+  styleUrl: './cart-item.component.css',
 })
 export class CartItemComponent {
-  @Input() item: any;
+  @Input() meal: any;
+  quantity: number = 1;
 
+  constructor(private cartService: CartService) {}
 
+  increamentQuantity() {
+    if (!this.meal) {
+      console.error('Meal is undefined!');
+      return;
+    }
+    this.cartService.increamentQuantity(this.meal.id);
+    console.log(
+      `Increased Quantity of ${this.meal.title} in cart! ${this.quantity}`
+    );
+  }
+  decreamentQuantity() {
+    if (!this.meal) {
+      console.error('Meal is undefined!');
+      return;
+    }
+    this.cartService.decreamentQuantity(this.meal.id);
+    console.log(
+      `decreased quantity of ${this.meal.title} in cart! ${this.quantity}`
+    );
+  }
 }

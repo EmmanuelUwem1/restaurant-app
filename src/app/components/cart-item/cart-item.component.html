@@ -1,3 +1,27 @@
-<div>
-    
+<div class="border border-[#FF9900] rounded-[26px] p-3 flex flex-col justify-center items-start ">
+    <div class="flex justify-between items-center">
+    <span class="relative overflow-hidden h-44 rounded-3xl ">
+        <img src="{{meal.imageUrl}}" alt="{{meal.title}}">
+    </span>
+    <div class="flex flex-col justify-center items-start ">
+        <span></span>
+    </div>
+    </div>
+    <div class="flex justify-between items-center w-full">
+        <div class="flex justify-start items-center w-1/2">
+             <span class="flex relative h-6 w-6">
+            <img src="/trash.png" alt="trash icon">
+        </span>
+        <h3 class="font-bold text-xl text-[#FF9900]">Remove</h3>
+        </div>
+      
+        <div class="flex justify-between items-center w-2/5">
+            <span class="cursor-pointer rounded-[8px] bg-[#FF9900] w-10 h-10 justify-center flex items-center font-extrabold text-base" (click)="decreamentQuantity()">-</span>
+       <span class="text-base font-bold">
+        {{ quantity }}
+        </span>
+
+        <span class="cursor-pointer rounded-[8px] bg-[#FF9900] w-10 h-10 justify-center flex items-center font-extrabold text-base" (click)="increamentQuantity()">+</span>
+        </div>
+    </div>
 </div>

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 import { HostListener } from '@angular/core';
-import { HamburgerIconComponent } from '../../hamburger-icon/hamburger-icon.component';
+import { HamburgerIconComponent } from '../hamburger-icon/hamburger-icon.component';
 import { signal } from '@angular/core';
 import { CartService } from '../../services/cart-service.service';
 

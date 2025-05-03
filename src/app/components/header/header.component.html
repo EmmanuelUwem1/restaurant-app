@@ -1,6 +1,6 @@
 <header class="flex transition-class justify-between items-center px-4 sm:px-8 lg:px-16 fixed w-full left-0 top-0 h-20 lg:h-24 z-[1000] " [class.scrolled]="isScrolled">
     <a routerLink="/" class="cursor-pointer text-white font-normal max-sm:text-2xl max-md:text-3xl text-4xl z-[10001]">Fraiche</a>
-    <nav class="absolute md:relative flex justify-center items-center gap-8 lg:gap-14 text-white text-base font-semibold flex-col md:flex-row w-full max-md:top-0 max-md:h-screen max-md:bg-[#0f0f0f] right-0 max-md:py-8 max-md:pt-0 transition-class md:w-fit" [class.max-md:-translate-x-full]="!isOpen()" [class.max-md:translate-x-0]="isOpen()">
+    <nav class="absolute md:relative flex justify-start max-md:pt-32 md:justify-center items-center gap-8 lg:gap-14 text-white text-base font-semibold flex-col md:flex-row w-full max-md:top-0 max-md:h-screen max-md:bg-[#0f0f0f] right-0 max-md:py-8 transition-class md:w-fit" [class.max-md:-translate-x-full]="!isOpen()" [class.max-md:translate-x-0]="isOpen()">
             <a *ngFor="let link of headerLinks" [routerLink]="link.path" [class.active]="isActive(link.path)" (click)="toggleMenu()" >{{link.name}}</a>
     </nav>
     <div class="flex justify-between items-center gap-2 sm:gap-4 z-[10001]">

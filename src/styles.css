@@ -43,6 +43,9 @@ color: #FF9900;
 .transition-class{
     transition: all .4s ease;
 }
+.vanish{
+  opacity: 0;
+}
 
 /* side nav */
 

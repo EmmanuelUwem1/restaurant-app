@@ -1,18 +1,25 @@
 <div class="border border-[#FF9900] rounded-[26px] gap-2 p-3 flex flex-col justify-center items-start ">
-    <div class="flex justify-between items-center">
-    <span class="relative overflow-hidden h-44 rounded-3xl ">
+    <div class="flex justify-between items-center gap-2 w-full">
+    <span class="relative overflow-hidden rounded-3xl w-full">
         <img src="{{meal.imageUrl}}" alt="{{meal.title}}">
     </span>
-    <div class="flex flex-col justify-center items-start ">
-        <span></span>
+    <div class="flex flex-col justify-start items-start w-full">
+        <div class="flex justify-between gap-2 w-full">
+            <div class="flex flex-col justify-start items-start font-semibold text-lg w-full">
+                <span>{{meal.title}}</span>
+                <span *ngIf="meal.quantity === 1">1 plate</span>
+                <span *ngIf="meal.quantity > 1">{{meal.quantity}} plates</span>
+            </div>
+            <span class="font-semibold">₦{{meal.price}}</span>
+        </div>
     </div>
     </div>
     <div class="flex justify-between items-center w-full">
-        <div class="flex justify-start items-center gap-0.5 w-full">
+        <div class="flex justify-start items-center gap-0.5 w-full cursor-pointer" (click)="removeItem(meal.id)">
              <span class="flex relative h-6 w-6">
             <img src="/trash.png" alt="trash icon">
         </span>
-        <h3 class="font-bold text-xl text-[#FF9900]">Remove</h3>
+        <h3 class="font-bold text-lg text-[#FF9900]">Remove</h3>
         </div>
       
         <div class="flex justify-between items-center w-full">

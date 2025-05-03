@@ -13,7 +13,11 @@ export class CartItemComponent {
   // quantity: number = 1;
 
   constructor(private cartService: CartService) {}
-  
+
+  removeItem(id: string) {
+    this.cartService.removeFromCart(id);
+    console.log(`Removed item with id ${id} from cart!`);
+  }
 
   increamentQuantity() {
     if (!this.meal) {
@@ -21,9 +25,7 @@ export class CartItemComponent {
       return;
     }
     this.cartService.increamentQuantity(this.meal.id);
-    console.log(
-      `Increased Quantity of ${this.meal.title} in cart!`
-    );
+    console.log(`Increased Quantity of ${this.meal.title} in cart!`);
   }
   decreamentQuantity() {
     if (!this.meal) {
@@ -31,8 +33,6 @@ export class CartItemComponent {
       return;
     }
     this.cartService.decreamentQuantity(this.meal.id);
-    console.log(
-      `decreased quantity of ${this.meal.title} in cart!`
-    );
+    console.log(`decreased quantity of ${this.meal.title} in cart!`);
   }
 }

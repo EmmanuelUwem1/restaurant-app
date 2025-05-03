@@ -20,11 +20,12 @@ export class CheckoutComponent {
   ngOnInit() {
     this.cartService.cart$.subscribe((cart) => {
       this.cartItems = cart;
-  
+      
           this.totalPrice = this.cartItems.reduce(
             (sum, item) => sum + item.price * item.quantity,
             0
-          );
+      );
+    
     })
 
   }

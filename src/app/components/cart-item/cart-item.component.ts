@@ -10,9 +10,10 @@ import { CartService } from '../../services/cart-service.service';
 })
 export class CartItemComponent {
   @Input() meal: any;
-  quantity: number = 1;
+  // quantity: number = 1;
 
   constructor(private cartService: CartService) {}
+  
 
   increamentQuantity() {
     if (!this.meal) {
@@ -21,7 +22,7 @@ export class CartItemComponent {
     }
     this.cartService.increamentQuantity(this.meal.id);
     console.log(
-      `Increased Quantity of ${this.meal.title} in cart! ${this.quantity}`
+      `Increased Quantity of ${this.meal.title} in cart!`
     );
   }
   decreamentQuantity() {
@@ -31,7 +32,7 @@ export class CartItemComponent {
     }
     this.cartService.decreamentQuantity(this.meal.id);
     console.log(
-      `decreased quantity of ${this.meal.title} in cart! ${this.quantity}`
+      `decreased quantity of ${this.meal.title} in cart!`
     );
   }
 }

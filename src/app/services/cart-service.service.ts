@@ -60,10 +60,7 @@ export class CartService {
     this.updateCart(cart);
   }
 
-  // Clear the cart
-  clearCart() {
-    localStorage.removeItem(this.cartKey);
-  }
+
 
   getUniqueItemCount(): number {
     const cart = this.getCart(); // Retrieve cart items from local storage

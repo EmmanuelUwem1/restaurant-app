@@ -31,14 +31,19 @@ export class CartService {
     this.updateCart(cart);
   }
   increamentQuantity(mealId: string) {
-    let cart = this.getCart(); 
+    let cart = this.getCart();
     const existingItem = cart.find((item) => item.id === mealId);
 
     if (existingItem) {
       existingItem.quantity += 1;
     }
 
-    this.updateCart(cart); 
+    this.updateCart(cart);
+  }
+  clearCart() {
+
+    localStorage.removeItem('cart');
+this.updateCart([])
   }
 
   decreamentQuantity(mealId: string) {
@@ -59,8 +64,6 @@ export class CartService {
     let cart = this.getCart().filter((item) => item.id !== mealId);
     this.updateCart(cart);
   }
-
-
 
   getUniqueItemCount(): number {
     const cart = this.getCart(); // Retrieve cart items from local storage

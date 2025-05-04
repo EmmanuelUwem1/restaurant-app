@@ -11,6 +11,9 @@
         <h2 class="">Subtotal</h2>
         <span>₦{{totalPrice}}</span>
     </div>
+    <div class="flex w-full">
+         <input type="email" required (change)="updateEmail($event)" placeholder="Enter your email" class="w-full sm:w-1/2 md:w-1/3 h-12 px-4 border border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-[#FF9900]">
+    </div>
     <div class="flex flex-col justify-start items-center gap-4 py-6 w-full">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
             <app-cart-item *ngFor="let item of cartItems" [meal]="item" (removeItem)="removeItem(item.id)" (increamentItem)="increamentItem(item.id)" (increamentItem)="decreamentItem(item.id)"/>
@@ -19,6 +22,6 @@
    
 </div>
 <div *ngIf="cartItems.length > 0" class="bg-[#0F0F0F] fixed z-[10003] bottom-0 left-0 w-full flex justify-center items-center sm:p-8 p-4">
-<button class="bg-[#FF9900] text-xl font-bold w-full sm:w-1/2 lg:w-1/3 h-12  flex justify-center items-center rounded-lg cursor-pointer">Checkout</button>
+<button (click)="payWithPaystack()" class="bg-[#FF9900] text-xl font-bold w-full sm:w-1/2 lg:w-1/3 h-12  flex justify-center items-center rounded-lg cursor-pointer">Checkout</button>
 </div>
 </section>

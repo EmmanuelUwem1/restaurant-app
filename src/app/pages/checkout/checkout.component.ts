@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart-service.service';
 import { CartItemComponent } from '../../components/cart-item/cart-item.component';
 import { Angular4PaystackModule } from 'angular8-paystack';
-import { environment } from '../../../../environment';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -23,7 +22,7 @@ import { FormsModule } from '@angular/forms';
 export class CheckoutComponent {
   cartItems: any[] = [];
   totalPrice: any;
-  apiKey: any;
+  apiKey= import.meta.env['NG_APP_API_KEY'];
   reference: any;
   email: string = '';
   constructor(private cartService: CartService) {}
@@ -39,7 +38,7 @@ export class CheckoutComponent {
       );
     });
     this.reference = `ref-${Math.ceil(Math.random() * 10e13)}`;
-    this.apiKey = environment.apiKey;
+    // this.apiKey = import.meta.env.NG_APP_API_KEY;
   }
   updateEmail(event: Event) {
     this.email = (event.target as HTMLInputElement).value;

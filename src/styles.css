@@ -106,6 +106,7 @@ color: #FF9900;
 }
 
 
-
-
-
+app-cart-item {
+  /* opacity: 1; */
+  transition: opacity 0.6s;
+}

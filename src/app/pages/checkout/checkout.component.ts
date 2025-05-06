@@ -38,7 +38,7 @@ export class CheckoutComponent {
       );
     });
     this.reference = `ref-${Math.ceil(Math.random() * 10e13)}`;
-    // this.apiKey = import.meta.env.NG_APP_API_KEY;
+ 
   }
   updateEmail(event: Event) {
     this.email = (event.target as HTMLInputElement).value;

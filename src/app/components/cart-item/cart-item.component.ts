@@ -26,6 +26,7 @@ export class CartItemComponent implements OnDestroy, AfterViewInit {
     this.mm.add('(max-width: 768px)', () => {
       gsap.to(this.el.nativeElement, {
         opacity: 1,
+        y: -10,
         duration: 0.8,
         ease: 'power1.out',
       });
@@ -35,6 +36,7 @@ export class CartItemComponent implements OnDestroy, AfterViewInit {
       gsap.to(this.el.nativeElement, {
         opacity: 1,
         duration: 1,
+        x: -10,
         ease: 'power2.out',
       });
     });
@@ -55,7 +57,7 @@ export class CartItemComponent implements OnDestroy, AfterViewInit {
     this.mm.add('(min-width: 769px)', () => {
       gsap.to(this.el.nativeElement, {
         opacity: 0,
-        y: 30,
+        x: -100,
         duration: 0.7,
         ease: 'power2.in',
         onComplete: () => this.cartService.removeFromCart(id),

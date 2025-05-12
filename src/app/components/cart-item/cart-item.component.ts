@@ -45,7 +45,7 @@ export class CartItemComponent implements OnDestroy, AfterViewInit {
     this.mm.add('(max-width: 768px)', () => {
       gsap.to(this.el.nativeElement, {
         opacity: 0,
-        x: -30,
+        x: -100,
         duration: 0.5,
         ease: 'power1.in',
         onComplete: () => this.cartService.removeFromCart(id),

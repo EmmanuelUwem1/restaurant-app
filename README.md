@@ -1,4 +1,35 @@
-# Fraiche Restaurant
+# 🍽️ Restaurant App
+
+A **modern and interactive restaurant application** built with **Angular** and enhanced with **GSAP animations** for smooth visual effects. This app includes **a test Paystack payment gateway integration**, allowing users to simulate payments seamlessly.
+
+## ✨ Features
+
+- 📖 **Browse Menu**  
+  - View available meals with images, descriptions, and prices.
+
+- 🎭 **Smooth Animations**  
+  - Powered by **GSAP** for minimal transitions.
+
+- 🛒 **Cart & Checkout**  
+  - Add meals to the cart, modify selections, and proceed to checkout.
+
+- 💳 **Payment Simulation**  
+  - Integrated **test Paystack payment gateway** to simulate transactions.
+
+## 🛠 Tech Stack
+
+- **Angular** – Framework for building dynamic and scalable web applications.
+- **GSAP** – Animation library for smooth UI transitions.
+- **Tailwind CSS** – Lightweight styling framework for modern design.
+- **Paystack API** – Simulated payment gateway integration.
+
+## 🚀 Installation & Setup
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/restaurant-app.git
+   cd restaurant-app
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
 
